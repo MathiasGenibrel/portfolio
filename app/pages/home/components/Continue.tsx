@@ -18,7 +18,7 @@ export const Continue: FC<ContinueProps> = () => {
       >
         <ArrowBottom className={"h-8 pt-1"} />
       </div>
-      <span>Continuer de lire l'histoire</span>
+      <span>Continuer de lire mon histoire</span>
     </a>
   );
 };
