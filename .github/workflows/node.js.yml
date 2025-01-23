@@ -13,7 +13,8 @@ jobs:
       version: ${{ steps.package-version.outputs.version }}
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
     - name: Get package version
       id: package-version
