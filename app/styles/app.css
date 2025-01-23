@@ -12,7 +12,6 @@ html {
   @apply bg-background;
 }
 
-
 @font-face {
   font-family: "Magilio";
   src: url("/fonts/Magilio.ttf") format("truetype");
@@ -36,9 +35,8 @@ html {
   --color-text: #010511;
 }
 
-.clip-path-animation,
-.starting-clip-path-animation-bottom,
-.starting-clip-path-animation-top {
+.cp-from-b,
+.cp-from-t {
   clip-path: inset(0 0 0 0);
   transition: all 750ms;
   transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
@@ -59,10 +57,10 @@ html {
 }
 
 @starting-style {
-  .starting-clip-path-animation-bottom {
+  .cp-from-b {
     clip-path: inset(0 0 100% 0);
   }
-  .starting-clip-path-animation-top {
+  .cp-from-t {
     clip-path: inset(100% 0 0 0);
   }
 }
