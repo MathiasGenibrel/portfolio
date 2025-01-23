@@ -1,0 +1,11 @@
+.text-appear {
+  @apply origin-top-left translate-0 rotate-0 opacity-100 blur-none duration-200 starting:translate-y-4 starting:rotate-3 starting:opacity-0 starting:blur-[2px];
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+  transition-property: all;
+}
+
+.annotation-appear {
+  @apply origin-top-left translate-0 opacity-100 blur-none duration-200 starting:translate-y-4 starting:opacity-0 starting:blur-[2px];
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+  transition-property: all;
+}
