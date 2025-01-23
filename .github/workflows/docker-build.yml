@@ -12,15 +12,6 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      - name: Download build artifact
-        uses: dawidd6/action-download-artifact@v8
-        with:
-          name: build-artifact
-          path: .
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
-          run_id: ${{ github.event.workflow_run.id }}
-          search_artifacts: 'true'
-
       - name: Get package version
         id: package-version
         run: |
