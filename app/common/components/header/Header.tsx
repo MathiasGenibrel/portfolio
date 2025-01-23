@@ -1,12 +1,12 @@
-import { useState } from "react";
 import clsx from "clsx";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { NavListItem } from "./nav-list/NavListItem";
 import { Appointment } from "./nav-list/Appointment";
 import { MadeWithLove } from "./MadeWithLove";
+import { useMenuHeader } from "~/hooks/useMenuHeader";
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, toggle] = useMenuHeader();
 
   return (
     <>
@@ -15,7 +15,7 @@ export const Header = () => {
         className={clsx(
           "h-dvh w-dvh fixed bg-stone-800/25 backdrop-blur-2xl top-0 pointer-events-none",
           "transition-opacity duration-300",
-          isMenuOpen ? "opacity-100" : "opacity-0 delay-150",
+          isOpen ? "opacity-100" : "opacity-0 delay-150",
         )}
       />
 
@@ -24,7 +24,7 @@ export const Header = () => {
           "p-2 m-4 z-40",
           "flex flex-col gap-2 fixed top-0 rounded-2xl justify-between w-header left-0",
           "transition-all-quick-out duration-300",
-          isMenuOpen
+          isOpen
             ? "h-calc-dvh-margin backdrop-blur-none bg-background"
             : "h-14 delay-200 backdrop-blur-2xl bg-stone-300/25 pointer-events-none",
         )}
@@ -85,10 +85,7 @@ export const Header = () => {
                 </span>
               </a>
 
-              <HamburgerMenu
-                handleClick={() => setIsMenuOpen((prev) => !prev)}
-                isOpen={isMenuOpen}
-              />
+              <HamburgerMenu handleClick={toggle} isOpen={isOpen} />
             </div>
 
             {/* Navigation Menu */}
@@ -96,7 +93,7 @@ export const Header = () => {
               className={clsx(
                 "flex flex-col",
                 "transition-all, duration-300",
-                isMenuOpen ? "opacity-100 delay-150" : "opacity-0",
+                isOpen ? "opacity-100 delay-150" : "opacity-0",
               )}
             >
               <NavListItem>À propos</NavListItem>
@@ -106,9 +103,9 @@ export const Header = () => {
         </section>
 
         <section className={"flex flex-col gap-4 mb-2"}>
-          <Appointment isOpen={isMenuOpen} />
+          <Appointment isOpen={isOpen} />
 
-          <MadeWithLove isOpen={isMenuOpen} />
+          <MadeWithLove isOpen={isOpen} />
         </section>
       </header>
     </>
