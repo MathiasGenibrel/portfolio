@@ -13,7 +13,7 @@ export const Header = () => {
       <div
         aria-hidden="true"
         className={clsx(
-          "h-dvh w-dvh fixed bg-stone-800/25 backdrop-blur-2xl top-0",
+          "h-dvh w-dvh fixed bg-stone-800/25 backdrop-blur-2xl top-0 pointer-events-none",
           "transition-opacity duration-300",
           isMenuOpen ? "opacity-100" : "opacity-0 delay-150",
         )}
