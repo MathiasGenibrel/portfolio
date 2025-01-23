@@ -48,6 +48,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Get package version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
