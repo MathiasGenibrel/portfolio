@@ -17,9 +17,7 @@ jobs:
 
       - name: Get package version
         id: package-version
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -41,7 +39,7 @@ jobs:
           push: true
           tags: |
             ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:latest
-            ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.version }}
+            ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.current-version}}
           cache-from: type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:buildcache
           cache-to: type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:buildcache,mode=max
 
@@ -58,10 +56,10 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            docker pull ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.version }}
+            docker pull ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.current-version}}
             docker stop portfolio || true
             docker rm portfolio || true
             docker run -d --name portfolio \
               --restart unless-stopped \
               -p ${{ vars.APPLICATION_PORT }}:3000 \
-              ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.version }}
+              ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.current-version}}
