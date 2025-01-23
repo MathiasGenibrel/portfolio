@@ -1,0 +1,73 @@
+name: Docker Build and Deploy
+
+on:
+  workflow_run:
+    workflows: ["Node.js CI"]
+    types:
+      - completed
+    branches: [ "main" ]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: .
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Get package version
+        id: package-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.version }}
+          cache-from: type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:buildcache
+          cache-to: type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:buildcache,mode=max
+
+  deploy:
+    needs: docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            docker pull ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.version }}
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker run -d --name portfolio \
+              --restart unless-stopped \
+              -p ${{ vars.APPLICATION_PORT }}:3000 \
+              ${{ vars.DOCKERHUB_USERNAME }}/portfolio-mg-studio:${{ steps.package-version.outputs.version }}
