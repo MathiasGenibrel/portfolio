@@ -3,8 +3,7 @@ name: Docker Build and Deploy
 on:
   workflow_run:
     workflows: ["Node.js CI"]
-    types:
-      - completed
+    types: ["completed"]
     branches: [ "main" ]
 
 jobs:
@@ -14,12 +13,13 @@ jobs:
 
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v8
         with:
           name: build-artifact
           path: .
           # github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
+          run_id: ${{ github.event.workflow_run.id }}
+          search_artifacts: 'true'
 
       - name: Get package version
         id: package-version
