@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "./transition.css";
+
+html,
+body {
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+html {
+  @apply bg-background;
+}
+
+
+@font-face {
+  font-family: "Magilio";
+  src: url("/fonts/Magilio.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  font-style: italic;
+}
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --font-heading: "Magilio", "sans-serif";
+  --color-background: #f2fcf3;
+  --color-text: #010511;
+}
+
+.clip-path-animation,
+.starting-clip-path-animation-bottom,
+.starting-clip-path-animation-top {
+  clip-path: inset(0 0 0 0);
+  transition: all 750ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+  transition-delay: 250ms;
+}
+
+.animate-glow {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@starting-style {
+  .starting-clip-path-animation-bottom {
+    clip-path: inset(0 0 100% 0);
+  }
+  .starting-clip-path-animation-top {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+.h-calc-dvh-margin {
+  height: calc(100dvh - 2rem);
+}
+
+.w-header {
+  width: calc(100% - 2rem);
+}

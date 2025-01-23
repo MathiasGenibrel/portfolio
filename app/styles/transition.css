@@ -1,0 +1,4 @@
+.transition-all-quick-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+  transition-property: all;
+}
