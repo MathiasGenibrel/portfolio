@@ -22,7 +22,7 @@ export function Welcome({ message }: { message: string }) {
           <PrimaryHeading />
           <Annotation />
           <img
-            src={"https://picsum.photos/600"}
+            src={"/voiture.jpeg"}
             alt={"Animation en stop motion pour motiver les personnes à scroll"}
             className={
               "cp-from-b aspect-square h-full w-fit self-center rounded-xl object-cover"
