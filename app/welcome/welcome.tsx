@@ -18,18 +18,7 @@ export function Welcome({ message }: { message: string }) {
   return (
     <>
       <main className={"mt-14 flex flex-col items-center justify-center px-4"}>
-        <section className={"flex max-h-dvh flex-col gap-4 pt-16 pb-24"}>
-          <PrimaryHeading />
-          <Annotation />
-          <img
-            src={"/voiture.jpeg"}
-            alt={"Animation en stop motion pour motiver les personnes à scroll"}
-            className={
-              "cp-from-b aspect-square h-full w-fit self-center rounded-xl object-cover"
-            }
-          />
-          <Continue />
-        </section>
+        <HeroSection />
       </main>
     </>
   );
