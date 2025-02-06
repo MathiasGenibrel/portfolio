@@ -57,3 +57,17 @@ html {
 .w-header {
   width: calc(100% - 2rem);
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* 1rem is the gap of the container */
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
