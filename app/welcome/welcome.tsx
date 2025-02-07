@@ -2,6 +2,7 @@ import { FC } from "react";
 import clsx from "clsx";
 import { HeroSection } from "~/pages/home/components/hero-section/HeroSection";
 import { Marquee } from "~/pages/home/components/separator/Marquee";
+import { AboutMe } from "~/pages/home/components/about-me/AboutMe";
 
 type ColoredSpanProps = {
   children: string;
@@ -19,12 +20,13 @@ const items = [
   "Architecte Frontend",
 ];
 
-export function Welcome({ message }: { message: string }) {
+export function Welcome() {
   return (
     <>
       <main className={"mt-14 flex flex-col items-center justify-center"}>
         <HeroSection />
         <Marquee items={items} />
+        <AboutMe />
       </main>
     </>
   );

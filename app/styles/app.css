@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./transition.css";
+@import "./pattern.css";
 @import "./header.animation.css";
 @import "./clip-path.animation.css";
 
