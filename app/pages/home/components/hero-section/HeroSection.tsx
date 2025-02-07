@@ -14,7 +14,7 @@ export const HeroSection: FC<HeroSectionProps> = () => {
         src={"/mg-illustration.png"}
         alt={"Animation en stop motion pour motiver les personnes à scroll"}
         className={
-          "cp-from-t mb-8 aspect-square h-full w-fit self-center rounded-xl object-cover"
+          "cp-from-t mb-8 aspect-square h-full w-fit max-w-md self-center rounded-xl object-cover"
         }
       />
       <Continue />
