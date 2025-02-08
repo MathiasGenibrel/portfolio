@@ -11,9 +11,9 @@ export const AboutMe: FC<AboutMeProps> = ({}) => {
       <div className={"boxes-bg absolute top-0 left-0 h-full w-full"} />
       <div className={"z-10 flex flex-col"}>
         <HeadingSecondary>À propos de moi</HeadingSecondary>
-        <Tag />
+        <Tag>me</Tag>
         <Paragraph />
-        <Tag className={"self-end"} />
+        <Tag className={"self-end"}>me</Tag>
       </div>
     </div>
   );

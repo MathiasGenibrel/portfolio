@@ -4,6 +4,7 @@ import { HeroSection } from "~/pages/home/components/hero-section/HeroSection";
 import { Marquee } from "~/pages/home/components/separator/Marquee";
 import { AboutMe } from "~/pages/home/components/about-me/AboutMe";
 import { Works } from "~/pages/home/sections/Works";
+import { Knowledge } from "~/pages/home/sections/Knowledge";
 
 type ColoredSpanProps = {
   children: string;
@@ -21,6 +22,16 @@ const items = [
   "Architecte Frontend",
 ];
 
+const expertKnowledge = [
+  "Design System & Prototypage Haute-Fidélité",
+  "Développement Frontend Modern & Responsive",
+  "Expérience Utilisateur & Interface Interactive",
+  "Applications Cross-Platform React Native",
+  "Optimisation SEO & Performance Web",
+  "Workflow Git & Gestion de Versions",
+  "Infrastructure DevOps & Déploiement Cloud",
+];
+
 export function Welcome() {
   return (
     <>
@@ -31,6 +42,7 @@ export function Welcome() {
           <AboutMe />
           <Works />
         </div>
+        <Knowledge expertKnowledge={expertKnowledge} />
       </main>
     </>
   );

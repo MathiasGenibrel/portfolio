@@ -1,24 +1,40 @@
 .boxes-bg {
   --color-boxes: rgba(255, 251, 235, 0.1);
   background-image: linear-gradient(var(--color-boxes) 1px, transparent 1px),
-  linear-gradient(
-      to right,
-      var(--color-boxes) 1px,
-      transparent 1px
-  );
+    linear-gradient(to right, var(--color-boxes) 1px, transparent 1px);
   background-size: 20px 20px;
   -webkit-mask-image: radial-gradient(
-      circle at center,
-      var(--color-stone-900) 0%,
-      var(--color-stone-900) 30%,
-      rgba(28, 25, 23, 0.5) 50%,
-      transparent 70%
+    circle at center,
+    var(--color-stone-900) 0%,
+    var(--color-stone-900) 30%,
+    rgba(28, 25, 23, 0.5) 50%,
+    transparent 70%
   );
   mask-image: radial-gradient(
-      circle at center,
-      var(--color-stone-900) 0%,
-      var(--color-stone-900) 30%,
-      rgba(28, 25, 23, 0.5) 50%,
-      transparent 70%
+    circle at center,
+    var(--color-stone-900) 0%,
+    var(--color-stone-900) 30%,
+    rgba(28, 25, 23, 0.5) 50%,
+    transparent 70%
+  );
+}
+
+.boxes-bg--light {
+  --color-boxes-light: rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+    to right,
+    var(--color-boxes-light) 1px,
+    transparent 1px
+  );
+  background-size: 4rem;
+  mask-image: radial-gradient(
+    circle at left,
+    var(--color-stone-200) 0%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at left,
+    var(--color-stone-200) 0%,
+    transparent 80%
   );
 }
