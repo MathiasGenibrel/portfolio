@@ -32,3 +32,23 @@
     clip-path: inset(0 0 0 0);
   }
 }
+
+.cp-button {
+  clip-path: inset(100% 0 0 0);
+  transition: all 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+}
+
+div:hover > .cp-button,
+.cp-button:focus {
+  clip-path: inset(0 0 0 0);
+}
+
+.cp-image {
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 1500ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+  @variant group-hover/container {
+    clip-path: inset(0 0 0 0);
+  }
+}
