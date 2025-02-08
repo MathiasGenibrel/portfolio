@@ -15,12 +15,15 @@ export const ColoredSpan: FC<ColoredSpanProps> = ({ children, className }) => {
   return <span className={clsx("text-blue-500", className)}>{children}</span>;
 };
 
-const items = [
-  "Développeur Web",
-  "Développeur Mobile",
-  "TypeScript Wizard 🧙‍♂️",
-  "Architecte Frontend",
-];
+const MARQUEE = {
+  top: [
+    "Développeur Web",
+    "Développeur Mobile",
+    "TypeScript Wizard 🧙‍♂️",
+    "Architecte Frontend",
+  ],
+  bottom: ["React / React Native", "Tailwind CSS", "Github Actions", "Docker"],
+};
 
 const expertKnowledge = [
   "Design System & Prototypage Haute-Fidélité",
@@ -37,12 +40,13 @@ export function Welcome() {
     <>
       <main className={"mt-14 flex flex-col items-center justify-center"}>
         <HeroSection />
-        <Marquee items={items} />
+        <Marquee items={MARQUEE.top} />
         <div className={"flex w-full flex-col items-center bg-stone-900"}>
           <AboutMe />
           <Works />
         </div>
         <Knowledge expertKnowledge={expertKnowledge} />
+        <Marquee items={MARQUEE.bottom} />
       </main>
     </>
   );
