@@ -11,7 +11,7 @@ export const HeroSection: FC<HeroSectionProps> = () => {
       <PrimaryHeading />
       <Annotation />
       <img
-        src={"/mg-illustration.png"}
+        src={"/mg-illustration.webp"}
         alt={"Animation en stop motion pour motiver les personnes à scroll"}
         className={
           "cp-from-t mb-8 aspect-square h-full w-fit max-w-md self-center rounded-xl object-cover"
