@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Magilio";
+  src: url("/fonts/Magilio.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Fira";
+  src: url("/fonts/FiraCodeiScript-Italic.ttf") format("truetype");
+  font-style: italic;
+}
