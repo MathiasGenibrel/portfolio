@@ -20,7 +20,7 @@ export const Continue: FC<ContinueProps> = () => {
     >
       <div
         className={
-          "animate-glow flex aspect-square h-12 items-center justify-center rounded-full bg-stone-200"
+          "animate-glow flex aspect-square h-12 items-center justify-center rounded-full border-2"
         }
       >
         <ArrowBottom className={"h-8 pt-1"} />

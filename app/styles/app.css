@@ -48,10 +48,14 @@ html {
 
 @keyframes glow {
   0% {
-    opacity: 0.5;
+    background-color: var(--color-stone-400);
+    border-color: var(--color-background);
+    color: var(--color-background);
   }
   100% {
-    opacity: 1;
+    background-color: var(--color-background);
+    border-color: var(--color-stone-400);
+    color: var(--color-stone-900);
   }
 }
 
