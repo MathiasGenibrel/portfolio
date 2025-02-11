@@ -10,7 +10,7 @@ export const ContactButtons: FC = () => {
         <span className={"text-nowrap"}>ou alors</span>
         <hr className={"w-full text-amber-50 opacity-50"} />
       </div>
-      <ButtonLink href={"https://calendly.com/mathias-run"}>
+      <ButtonLink href={"https://calendly.com/mathias-geni/premier-contact"}>
         <span>Planifier un appel vidéo</span>
         <span className={"text-xs opacity-65"}>15 min</span>
       </ButtonLink>
