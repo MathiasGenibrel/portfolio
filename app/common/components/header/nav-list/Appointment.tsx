@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Separator } from "./Separator.tsx";
 import clsx from "clsx";
-import { ButtonLink } from "../../buttons/ButtonLink.tsx";
+import { Separator } from "./Separator";
+import { ButtonLink } from "../../buttons/ButtonLink";
 
 interface AppointmentProps {
   isOpen: boolean;

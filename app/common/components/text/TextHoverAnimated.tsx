@@ -1,12 +1,17 @@
 import { FC } from "react";
+import clsx from "clsx";
 
 interface TextHoverAnimatedProps {
   children: string;
+  className?: HTMLSpanElement["className"];
 }
 
-export const TextHoverAnimated: FC<TextHoverAnimatedProps> = ({ children }) => {
+export const TextHoverAnimated: FC<TextHoverAnimatedProps> = ({
+  children,
+  className,
+}) => {
   return (
-    <div className={"group/text relative cursor-default"}>
+    <div className={clsx("group/text relative cursor-default", className)}>
       <span
         aria-hidden
         className={

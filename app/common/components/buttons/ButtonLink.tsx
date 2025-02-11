@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 interface ButtonLinkProps {
   children: ReactNode;
-  href: `https://${string}`;
+  href: `https://${string}` | `mailto:${string}`;
   className?: HTMLAnchorElement["className"];
 }
 
@@ -17,8 +17,8 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
       href={href}
       target={"_blank"}
       className={clsx(
-        "flex justify-between items-baseline",
-        "font-display font-medium bg-blue-500 text-background px-4 py-2 rounded-lg w-full",
+        "flex items-baseline justify-between",
+        "font-display text-background w-full rounded-lg bg-blue-500 px-5 py-3 font-medium",
         "hover:bg-blue-600",
         className,
       )}
