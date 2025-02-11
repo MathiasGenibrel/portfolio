@@ -16,7 +16,7 @@ export const HeroSection: FC<HeroSectionProps> = () => {
         height={300}
         width={300}
         className={
-          "cp-from-t mb-8 aspect-square w-full max-w-md self-center object-cover"
+          "annotation-appear mb-8 aspect-square w-full max-w-md self-center object-cover delay-[750ms]"
         }
       />
       <Continue />
