@@ -12,7 +12,11 @@ body {
 }
 
 html {
-  @apply bg-background;
+  @apply bg-background scroll-smooth;
+}
+
+* {
+  @apply scroll-mt-14
 }
 
 @font-face {

@@ -14,7 +14,7 @@ export const Header = () => {
       <div
         aria-hidden="true"
         className={clsx(
-          "pointer-events-none fixed top-0 h-dvh w-dvh bg-stone-800/25 backdrop-blur-2xl",
+          "pointer-events-none fixed top-0 z-20 h-dvh w-dvh bg-stone-800/25 backdrop-blur-2xl",
           "transition-opacity duration-300",
           isOpen ? "opacity-100" : "opacity-0 delay-150",
         )}
