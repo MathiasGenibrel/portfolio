@@ -1,19 +1,15 @@
 import { FC, MouseEventHandler } from "react";
 import { ArrowBottom } from "~/common/components/icons/arrow-bottom";
 import { useNavigate } from "react-router";
+import { useAnchor } from "~/common/hooks/useAnchor";
 
 interface ContinueProps {}
 
 export const Continue: FC<ContinueProps> = () => {
-  const navigate = useNavigate();
+  const anchorHandler = useAnchor();
 
-  const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) => {
-    e.preventDefault();
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth",
-    });
-    navigate("/#about");
-  };
+  const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) =>
+    anchorHandler(e, "#about");
 
   return (
     <a

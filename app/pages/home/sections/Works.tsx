@@ -7,7 +7,7 @@ interface WorksProps {}
 
 export const Works: FC<WorksProps> = () => {
   return (
-    <section className={"w-full max-w-3xl p-8"}>
+    <section className={"w-full max-w-3xl p-8"} id={"works"}>
       <HeadingSecondary>Accomplissements</HeadingSecondary>
       <div className={"flex flex-wrap gap-8"}>
         {PROJECTS.map((project, index) => (

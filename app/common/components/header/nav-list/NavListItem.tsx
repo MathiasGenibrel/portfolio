@@ -1,22 +1,42 @@
-import { FC } from "react";
+import { FC, MouseEventHandler } from "react";
 import clsx from "clsx";
+import { useAnchor } from "~/common/hooks/useAnchor";
 
 interface NavListItemProps {
   children: string;
+  href: `#${string}`;
+  toggleMenu: () => void;
 }
 
-export const NavListItem: FC<NavListItemProps> = ({ children }) => {
+export const NavListItem: FC<NavListItemProps> = ({
+  children,
+  href,
+  toggleMenu,
+}) => {
+  const anchorHandler = useAnchor();
+
+  const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) => {
+    toggleMenu();
+    anchorHandler(e, href);
+  };
+
   return (
     <li
       className={clsx(
         "transition-all duration-300",
         "bg-stone-300/0 hover:bg-stone-300/50",
-        "px-4 min-h-12 flex items-center rounded-lg",
+        "flex min-h-12 items-center rounded-lg px-4",
         "cursor-pointer",
         "font-display",
       )}
     >
-      {children}
+      <a
+        href={href}
+        onClick={clickHandler}
+        className={"flex h-full w-full items-center"}
+      >
+        {children}
+      </a>
     </li>
   );
 };

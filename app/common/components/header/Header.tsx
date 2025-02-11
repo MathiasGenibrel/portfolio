@@ -5,9 +5,15 @@ import { Appointment } from "./nav-list/Appointment";
 import { MadeWithLove } from "./MadeWithLove";
 import { useMenuHeader } from "~/hooks/useMenuHeader";
 import { CompanyLogoIcon } from "~/common/components/icons/company-logo.icon";
+import { Link } from "react-router";
+import { MouseEventHandler } from "react";
 
 export const Header = () => {
   const [isOpen, toggle] = useMenuHeader();
+
+  const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) => {
+    isOpen && toggle();
+  };
 
   return (
     <>
@@ -33,8 +39,9 @@ export const Header = () => {
         <section>
           <nav className="flex flex-col gap-2">
             <div className={"flex w-full items-center justify-between"}>
-              <a
-                href="/"
+              <Link
+                to={"/"}
+                onClick={clickHandler}
                 title="Back to home"
                 className={"pointer-events-auto flex items-center"}
               >
@@ -46,7 +53,7 @@ export const Header = () => {
                 >
                   MG Studio
                 </span>
-              </a>
+              </Link>
 
               <HamburgerMenu handleClick={toggle} isOpen={isOpen} />
             </div>
@@ -59,8 +66,12 @@ export const Header = () => {
                 isOpen ? "opacity-100 delay-150" : "opacity-0",
               )}
             >
-              <NavListItem>À propos</NavListItem>
-              <NavListItem>Projets</NavListItem>
+              <NavListItem toggleMenu={toggle} href={"#about"}>
+                À propos
+              </NavListItem>
+              <NavListItem toggleMenu={toggle} href={"#works"}>
+                Projets
+              </NavListItem>
             </ul>
           </nav>
         </section>
