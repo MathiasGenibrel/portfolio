@@ -22,10 +22,13 @@ export const Paragraph: FC<ParagraphProps> = ({}) => {
           (que les moldus appellent "diplôme")
         </Text.Dark>
         , je me suis lancé dans une quête pour créer des applications web et
-        mobiles qui allient élégance et fonctionnalité. Que ce soit en domptant
-        des interfaces utilisateur ou en tissant des sortilèges d'optimisation,
-        je manie les technologies modernes avec la précision d'un maître sorcier
-        et la créativité d'un artiste.
+        mobiles qui allient élégance et fonctionnalité.
+        <br />
+        <Text.Dark>
+          Que ce soit en domptant des interfaces utilisateur ou en tissant des
+          sortilèges d'optimisation, je manie les technologies modernes avec la
+          précision d'un maître sorcier et la créativité d'un artiste.
+        </Text.Dark>
       </Text.Light>
     </p>
   );
