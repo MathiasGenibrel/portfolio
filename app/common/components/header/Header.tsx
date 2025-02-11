@@ -27,7 +27,7 @@ export const Header = () => {
           "transition-all-quick-out duration-300",
           isOpen
             ? "h-calc-dvh-margin bg-background backdrop-blur-none"
-            : "pointer-events-none h-14 bg-stone-300/25 backdrop-blur-2xl delay-200",
+            : "pointer-events-none h-14 bg-stone-200/75 backdrop-blur-2xl delay-200",
         )}
       >
         <section>
