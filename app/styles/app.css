@@ -36,6 +36,7 @@ html {
 }
 
 @theme {
+  --breakpoint-xs: 25rem;
   --font-display: "Satoshi", "sans-serif";
   --font-heading: "Magilio", "sans-serif";
   --color-background: #f2fcf3;
