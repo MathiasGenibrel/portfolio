@@ -5,7 +5,6 @@ import { Marquee } from "~/pages/home/components/separator/Marquee";
 import { AboutMe } from "~/pages/home/components/about-me/AboutMe";
 import { Works } from "~/pages/home/sections/Works";
 import { Knowledge } from "~/pages/home/sections/Knowledge";
-import { FooterComponent } from "~/common/components/footer/footer.component";
 
 type ColoredSpanProps = {
   children: string;
@@ -48,7 +47,6 @@ export function Welcome() {
         </div>
         <Knowledge expertKnowledge={expertKnowledge} />
         <Marquee items={MARQUEE.bottom} />
-        <FooterComponent />
       </main>
     </>
   );
