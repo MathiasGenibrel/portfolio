@@ -17,7 +17,7 @@ export const PROJECTS: Omit<ComponentProps<typeof Card>, "children">[] = [
     link: "/klack",
   },
   {
-    title: "Webapp pour un distributeur de pizza",
+    title: "Webapp de distributeur de pizzas",
     description:
       "Développement d'une application web permettant aux clients de Nell de consulter en temps réel les pizzas disponibles dans leurs distributeurs automatiques. Une solution qui rend l'expérience d'achat plus fluide et transparente.",
     imageUrl: "/pizza-nell.webp",
