@@ -16,7 +16,7 @@ export const ButtonIcon: FC<ButtonIconProps> = ({ Icon, href, title }) => {
       href={href}
       title={title}
       aria-label={title}
-      className={"group relative overflow-hidden rounded-lg bg-stone-600 p-3"}
+      className={"group relative overflow-hidden rounded-lg bg-stone-700 p-3"}
     >
       <Icon
         className={
