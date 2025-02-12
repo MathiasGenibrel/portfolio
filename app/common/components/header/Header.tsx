@@ -64,7 +64,7 @@ export const Header = () => {
             {/* Navigation Menu */}
             <ul
               className={clsx(
-                "flex flex-col md:flex-row",
+                "flex flex-col md:flex-row dark:text-stone-900",
                 "transition-all, duration-300",
                 isOpen ? "opacity-100 delay-150" : "opacity-0 md:opacity-100",
               )}

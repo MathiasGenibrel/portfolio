@@ -5,7 +5,7 @@ import { ClientGuard } from "~/common/components/guards/client.guard";
 export const Annotation: FC = () => {
   return (
     <article className={"annotation-appear delay-500 md:max-w-xl"}>
-      <p className={"font-display text-lg"}>
+      <p className={"font-display text-lg dark:text-stone-900"}>
         <strong className={"font-medium"}>
           Je suis un véritable{" "}
           <ClientGuard
