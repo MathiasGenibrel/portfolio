@@ -10,7 +10,9 @@ interface KnowledgeProps {
 export const Knowledge: FC<KnowledgeProps> = ({ expertKnowledge }) => {
   return (
     <section
-      className={"relative flex w-full flex-col overflow-hidden px-8 py-20"}
+      className={
+        "relative flex w-full max-w-4xl flex-col overflow-hidden px-8 py-20"
+      }
     >
       <div className={"boxes-bg--light absolute top-0 left-8 h-full w-full"} />
       <h2 className={"font-heading text-6xl font-medium text-stone-900"}>
