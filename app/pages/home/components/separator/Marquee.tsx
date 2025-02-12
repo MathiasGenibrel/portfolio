@@ -8,7 +8,7 @@ export const Marquee: FC<MarqueeProps> = ({ items }) => {
   return (
     <div className="flex w-full overflow-hidden bg-stone-900 py-4">
       <ul className="animate-scroll flex gap-8">
-        {[...items, ...items].map((item, index) => (
+        {[...items, ...items, ...items, ...items].map((item, index) => (
           <li key={`${item}-${index}`} className="flex items-center gap-8">
             <span className="text-background whitespace-nowrap">{item}</span>
             <Separator />
