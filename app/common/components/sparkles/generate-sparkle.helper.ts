@@ -11,7 +11,7 @@ export interface Sparkle {
 
 type GenerateSparkle = (color?: string) => Sparkle;
 
-const DEFAULT_COLOR = "hsl(45, 96%, 56%)"; // amber-400
+const DEFAULT_COLOR = "oklch(0.879 0.169 84.429)"; // amber-300
 
 export const generateSparkle: GenerateSparkle = (color = DEFAULT_COLOR) => ({
   id: String(random(10000, 99999)),

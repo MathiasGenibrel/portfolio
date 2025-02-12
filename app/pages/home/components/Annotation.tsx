@@ -13,10 +13,14 @@ export const Annotation: FC = () => {
               <span className={"font-magic text-blue-500"}>sorcier</span>
             }
           >
-            <Sparkles>
+            <Sparkles
+              withRandomColor
+              minSparkleDelay={200}
+              maxSparkleDelay={550}
+            >
               <span className={"font-magic text-blue-500"}>sorcier</span>
             </Sparkles>
-          </ClientGuard>
+          </ClientGuard>{" "}
           du front-end
         </strong>{" "}
         qui métamorphose vos défis quotidiens en solutions innovantes.

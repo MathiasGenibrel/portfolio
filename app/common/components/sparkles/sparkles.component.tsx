@@ -16,9 +16,9 @@ interface SparklesProps {
 const SPARKLE_LIFE_TIME = 1e3; // 1 second
 
 const randomColor = () => {
-  const randomHue = Math.floor(Math.random() * 360);
+  const randomHue = Math.random() * 360;
 
-  return `hsl(${randomHue}, 96%, 56%)`;
+  return `oklch(0.879 0.169 ${randomHue})`;
 };
 
 export const Sparkles: FC<SparklesProps> = ({
