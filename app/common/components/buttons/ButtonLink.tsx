@@ -17,7 +17,7 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
       href={href}
       target={"_blank"}
       className={clsx(
-        "flex items-baseline justify-between",
+        "flex items-baseline justify-between gap-4",
         "font-display text-background w-full rounded-lg bg-blue-500 px-5 py-3 font-medium",
         "hover:bg-blue-600",
         className,

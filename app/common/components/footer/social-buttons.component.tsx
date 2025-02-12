@@ -1,12 +1,19 @@
 import { FC } from "react";
+import clsx from "clsx";
 import { ButtonIcon } from "~/common/components/buttons/button-icon";
 import { MailIcon } from "~/common/components/icons/mail.icon";
 import { LinkedinIcon } from "~/common/components/icons/linkedin.icon";
 import { GithubIcon } from "~/common/components/icons/github.icon";
 
-export const SocialButtons: FC = () => {
+interface SocialButtonsProps {
+  className?: HTMLDivElement["className"];
+}
+
+export const SocialButtons: FC<SocialButtonsProps> = ({ className }) => {
   return (
-    <div className={"mt-8 flex justify-center gap-6"}>
+    <div
+      className={clsx("mt-8 flex items-center justify-center gap-6", className)}
+    >
       <ButtonIcon
         Icon={MailIcon}
         href={"mailto:contact@mathias.run"}
