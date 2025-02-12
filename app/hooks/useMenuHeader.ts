@@ -5,7 +5,8 @@ export const useMenuHeader = () => {
 
   // This effect is used to prevent execution on the server side
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    document.body.classList.toggle("overflow-hidden");
+    document.body.classList.toggle("md:overflow-auto");
   }, [isOpen]);
 
   return [isOpen, toggle] as const;

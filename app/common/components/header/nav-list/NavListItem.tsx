@@ -33,7 +33,7 @@ export const NavListItem: FC<NavListItemProps> = ({
       <a
         href={href}
         onClick={clickHandler}
-        className={"flex h-full w-full items-center"}
+        className={"flex h-full w-full items-center text-nowrap"}
       >
         {children}
       </a>

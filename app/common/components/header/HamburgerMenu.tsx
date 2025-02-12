@@ -13,9 +13,9 @@ export const HamburgerMenu: FC<HamburgerMenuProps> = ({
   return (
     <button
       className={clsx(
-        "lg:hidden z-50",
-        "w-8 h-8 mr-2",
-        "flex flex-col justify-center items-center pointer-events-auto cursor-pointer",
+        "z-50 md:hidden",
+        "mr-2 h-8 w-8",
+        "pointer-events-auto flex cursor-pointer flex-col items-center justify-center",
       )}
       onClick={handleClick}
       aria-label="Toggle menu"
@@ -24,21 +24,21 @@ export const HamburgerMenu: FC<HamburgerMenuProps> = ({
         className={clsx(
           "block h-0.5 w-6 bg-stone-800",
           "transition-all duration-300",
-          isOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1",
+          isOpen ? "translate-y-0.5 rotate-45" : "-translate-y-1",
         )}
       />
       <span
         className={clsx(
           "block h-0.5 bg-stone-800",
           "transition-all duration-300",
-          isOpen ? "opacity-0 w-0" : "opacity-100 w-6",
+          isOpen ? "w-0 opacity-0" : "w-6 opacity-100",
         )}
       />
       <span
         className={clsx(
           "block h-0.5 w-6 bg-stone-800",
           "transition-all duration-300",
-          isOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1",
+          isOpen ? "-translate-y-0.5 -rotate-45" : "translate-y-1",
         )}
       />
     </button>
