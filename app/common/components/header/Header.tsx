@@ -34,7 +34,7 @@ export const Header = () => {
           "transition-all-quick-out duration-300",
           isOpen
             ? "h-auto-dvh bg-background backdrop-blur-none md:h-16! md:bg-stone-200/75 md:backdrop-blur-2xl"
-            : "pointer-events-none h-16 bg-stone-200/75 backdrop-blur-2xl delay-200",
+            : "pointer-events-none h-16 bg-stone-200/75 backdrop-blur-2xl delay-200 md:pointer-events-auto",
         )}
       >
         <section className={"flex w-full"}>
