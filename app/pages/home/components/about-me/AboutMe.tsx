@@ -7,7 +7,10 @@ interface AboutMeProps {}
 
 export const AboutMe: FC<AboutMeProps> = ({}) => {
   return (
-    <div className={"relative w-full bg-stone-900 p-8"} id={"about"}>
+    <div
+      className={"relative w-full bg-stone-900 p-8 md:max-w-4xl"}
+      id={"about"}
+    >
       <div className={"boxes-bg absolute top-0 left-0 h-full w-full"} />
       <div className={"z-10 flex flex-col"}>
         <HeadingSecondary>À propos de moi</HeadingSecondary>
