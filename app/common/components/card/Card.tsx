@@ -32,6 +32,7 @@ export default function Card({
     >
       <Link
         to={link}
+        title={title}
         className={
           "group/container flex grow basis-3xs cursor-pointer flex-col text-amber-50"
         }
