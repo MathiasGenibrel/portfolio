@@ -3,11 +3,11 @@ import { ColoredSpan } from "~/welcome/welcome";
 
 interface PrimaryHeadingProps {}
 
-export const PrimaryHeading: FC<PrimaryHeadingProps> = ({}) => {
+export const PrimaryHeading: FC<PrimaryHeadingProps> = () => {
   return (
     <h1
       className={
-        "font-heading xs:text-6xl flex w-full flex-col items-end text-4xl"
+        "font-heading xs:text-6xl flex w-full flex-col items-end text-4xl md:text-8xl xl:text-9xl"
       }
     >
       <span className={"text-appear"}>Salut !</span>
