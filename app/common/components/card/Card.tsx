@@ -5,8 +5,8 @@ import {
   ReactNode,
   useContext,
 } from "react";
-import { Link, useNavigate } from "react-router";
-import { toast } from "sonner";
+import { Link } from "react-router";
+import { ExternalToast, toast } from "sonner";
 
 interface CardContext {
   link: string;
@@ -23,6 +23,28 @@ interface CardProps extends Omit<CardContext, "clickHandler"> {
 
 export const CardContext = createContext<CardContext | null>(null);
 
+const generateToastWithAction = (
+  link: string,
+): Pick<ExternalToast, "description" | "action"> => {
+  return {
+    description:
+      "La documentation détaillant le processus de création est actuellement en cours d'implémentation. En attendant, vous pouvez découvrir le projet en ligne.",
+    action: {
+      label: "Voir le projet",
+      onClick: () => {
+        window.open(link, "_blank");
+      },
+    },
+  };
+};
+
+const generateToastWithoutAction = (): Pick<ExternalToast, "description"> => {
+  return {
+    description:
+      "La documentation détaillant le processus de création est actuellement en cours d'implémentation.",
+  };
+};
+
 export default function Card({
   children,
   link,
@@ -34,6 +56,7 @@ export default function Card({
   const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) => {
     e.preventDefault();
     e.stopPropagation();
+
     toast("Documentation en cours d'implémentation", {
       classNames: {
         toast: "!bg-amber-50 !text-stone-900 flex-col",
@@ -43,17 +66,9 @@ export default function Card({
         description: "opacity-75 font-display text-sm",
       },
       closeButton: true,
-      description: deployLink
-        ? "La documentation détaillant le processus de création est actuellement en cours d'implémentation. En attendant, vous pouvez découvrir le projet en ligne."
-        : "La documentation détaillant le processus de création est actuellement en cours d'implémentation.",
-      action: deployLink
-        ? {
-            label: "Voir le projet",
-            onClick: () => {
-              window.open(deployLink, "_blank");
-            },
-          }
-        : null,
+      ...(deployLink
+        ? generateToastWithAction(deployLink)
+        : generateToastWithoutAction()),
     });
   };
 
