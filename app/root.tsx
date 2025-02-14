@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import stylesheet from "./styles/app.css?url";
 import { Header } from "~/common/components/header/Header";
 import { FooterComponent } from "~/common/components/footer/footer.component";
+import { Toaster } from "sonner";
 
 export const links: Route.LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -45,6 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Header />
+        <Toaster />
         {children}
         <ScrollRestoration />
         <Scripts />
