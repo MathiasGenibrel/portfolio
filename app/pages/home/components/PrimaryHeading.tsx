@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ColoredSpan } from "~/welcome/welcome";
+import { ColoredSpan } from "~/pages/home/welcome";
 
 interface PrimaryHeadingProps {}
 

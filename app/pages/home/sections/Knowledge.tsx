@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Tag } from "~/pages/home/components/about-me/Tag";
 import { TextHoverAnimated } from "~/common/components/text/TextHoverAnimated";
-import { ColoredSpan } from "~/welcome/welcome";
+import { ColoredSpan } from "~/pages/home/welcome";
 
 interface KnowledgeProps {
   expertKnowledge: string[];
