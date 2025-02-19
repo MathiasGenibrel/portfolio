@@ -1,0 +1,3 @@
+.max-h-carousel {
+  max-height: min(calc(100svh - 30svh), 600px);
+}

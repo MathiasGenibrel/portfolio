@@ -22,11 +22,15 @@ Heading.Primary = ({ children, className = "" }) => (
 );
 
 Heading.Secondary = ({ children, className = "" }) => (
-  <h2 className={clsx(baseClassName, className)}>{children}</h2>
+  <h2 className={clsx("font-display text-3xl font-bold", className)}>
+    {children}
+  </h2>
 );
 
 Heading.Tertiary = ({ children, className = "" }) => (
-  <h3 className={clsx(baseClassName, className)}>{children}</h3>
+  <h3 className={clsx("font-display text-2xl font-medium", className)}>
+    {children}
+  </h3>
 );
 
 export default Heading;

@@ -1,7 +1,8 @@
 import type { Route } from "./+types/home";
 import Heading from "~/common/components/heading/Heading";
 import { GEORIDE_PROJECT } from "~/data/projects/georide";
-import { ImageComparator } from "~/pages/projects/georide/image-comparator";
+import { ImageComparator } from "~/pages/projects/georide/image-comparator/image-comparator";
+import { Introduction } from "~/pages/projects/georide/introduction/introduction.component";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -26,11 +27,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <section
       className={
-        "flex w-full max-w-4xl flex-col gap-4 px-4 pt-28 pb-24 md:pt-32 xl:pt-48 xl:pb-32"
+        "font-display flex w-full max-w-4xl flex-col gap-4 px-4 pt-28 pb-24 md:pt-32 xl:pt-48 xl:pb-32"
       }
     >
       <Heading.Primary>{GEORIDE_PROJECT.title}</Heading.Primary>
       <ImageComparator />
+      <Introduction />
     </section>
   );
 }
