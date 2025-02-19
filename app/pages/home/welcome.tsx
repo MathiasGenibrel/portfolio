@@ -38,16 +38,14 @@ const expertKnowledge = [
 export function Welcome() {
   return (
     <>
-      <main className={"flex flex-col items-center justify-center"}>
-        <HeroSection />
-        <Marquee items={MARQUEE.top} />
-        <div className={"flex w-full flex-col items-center bg-stone-900"}>
-          <AboutMe />
-          <Works />
-        </div>
-        <Knowledge expertKnowledge={expertKnowledge} />
-        <Marquee items={MARQUEE.bottom} />
-      </main>
+      <HeroSection />
+      <Marquee items={MARQUEE.top} />
+      <div className={"flex w-full flex-col items-center bg-stone-900"}>
+        <AboutMe />
+        <Works />
+      </div>
+      <Knowledge expertKnowledge={expertKnowledge} />
+      <Marquee items={MARQUEE.bottom} />
     </>
   );
 }

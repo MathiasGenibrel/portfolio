@@ -47,7 +47,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         <Toaster />
-        {children}
+        <main className={"flex flex-col items-center justify-center"}>
+          {children}
+        </main>
         <ScrollRestoration />
         <Scripts />
         <FooterComponent />
