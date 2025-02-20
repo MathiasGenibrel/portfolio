@@ -22,7 +22,7 @@ Heading.Primary = ({ children, className = "" }) => (
 );
 
 Heading.Secondary = ({ children, className = "" }) => (
-  <h2 className={clsx("font-display text-3xl font-bold", className)}>
+  <h2 className={clsx("font-display text-3xl leading-10 font-bold", className)}>
     {children}
   </h2>
 );
