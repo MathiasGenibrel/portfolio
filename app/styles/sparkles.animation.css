@@ -19,9 +19,9 @@
   }
 }
 .animation-grow-and-shrink {
-  animation: growAndShrink 600ms ease-in-out infinite;
+  animation: growAndShrink 600ms ease-in-out forwards;
 }
 
 .animation-spin {
-  animation: spin 600ms linear infinite;
+  animation: spin 600ms linear forwards;
 }
