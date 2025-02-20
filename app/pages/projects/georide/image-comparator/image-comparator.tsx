@@ -13,7 +13,9 @@ export const ImageComparator: FC<ImageComparatorProps> = ({}) => {
   return (
     <div
       ref={containerRef}
-      className={"relative w-fit overflow-hidden select-none"}
+      className={
+        "annotation-appear relative w-fit overflow-hidden delay-200 select-none"
+      }
       onMouseMove={handler.move}
       onClick={handler.click}
     >
