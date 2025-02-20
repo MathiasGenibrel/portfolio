@@ -13,7 +13,7 @@ export const SparkleComponent: FC<SparkleProps> = ({
 }) => {
   return (
     <div
-      className={"animation-grow-and-shrink pointer-events-none absolute"}
+      className={"animation-grow-and-shrink pointer-events-none absolute z-40"}
       style={style}
     >
       <svg
