@@ -7,6 +7,11 @@ import { BellIcon } from "~/common/components/icons/bell.icon";
 import { PinIcon } from "~/common/components/icons/pin.icon";
 import { Modal } from "~/common/components/modal/modal.component";
 import type { ModalRef } from "~/common/components/modal/modal.type";
+import { MotorcycleIcon } from "~/common/components/icons/motorcycle.icon";
+import { HomeIcon } from "~/common/components/icons/home.icon";
+import { SettingsIcon } from "~/common/components/icons/settings.icon";
+import { StatIcon } from "~/common/components/icons/stat.icon";
+import { UserGroupIcon } from "~/common/components/icons/user-group.icon";
 
 interface FakeAppProps {}
 
@@ -44,7 +49,7 @@ export const FakeApp: FC<FakeAppProps> = ({}) => {
   return (
     <div
       className={
-        "flex aspect-[207/448] max-h-[75vh] flex-col justify-end bg-[url(/georide/map.png)] bg-center"
+        "flex aspect-[207/448] max-h-[75vh] min-h-[38rem] flex-col justify-end self-center bg-[url(/georide/map.png)] bg-center"
       }
     >
       <Modal ref={modalRef}>
@@ -53,7 +58,11 @@ export const FakeApp: FC<FakeAppProps> = ({}) => {
         <Modal.Actions />
       </Modal>
 
-      <div className={"mx-12 mb-4 rounded-lg bg-white p-4 text-stone-900"}>
+      <div
+        className={
+          "mx-auto mb-4 min-w-64 rounded-lg bg-white p-4 text-stone-900"
+        }
+      >
         <div className={"flex items-center justify-between gap-4"}>
           <div className={"flex flex-col"}>
             <span className={"flex gap-1"}>
@@ -109,11 +118,20 @@ export const FakeApp: FC<FakeAppProps> = ({}) => {
           "flex justify-between gap-4 rounded-t-2xl bg-white p-4 text-stone-600"
         }
       >
-        <MailIcon className={"h-8 w-8"} />
-        <MailIcon className={"h-8 w-8"} />
-        <MailIcon className={"h-8 w-8"} />
-        <MailIcon className={"h-8 w-8"} />
-        <MailIcon className={"h-8 w-8"} />
+        <HomeIcon
+          gradient
+          className={"h-7 w-6 border-b-2 border-orange-500 pb-1"}
+        />
+        <StatIcon className={"h-6 w-6"} />
+        <div
+          className={
+            "rotate-45 rounded-md bg-linear-30 from-orange-500 to-orange-300 to-80% p-[3px]"
+          }
+        >
+          <UserGroupIcon className={"b h-6 w-6 -rotate-45 text-white"} />
+        </div>
+        <MotorcycleIcon className={"h-6 w-6"} />
+        <SettingsIcon className={"h-6 w-6"} />
       </div>
     </div>
   );
