@@ -13,6 +13,7 @@ const Heading: React.FC<HeadingProps> & {
   Primary: React.FC<HeadingProps>;
   Secondary: React.FC<HeadingProps>;
   Tertiary: React.FC<HeadingProps>;
+  Quaternary: React.FC<HeadingProps>;
 } = ({ children, className = "" }) => {
   return <h1 className={clsx(baseClassName, className)}>{children}</h1>;
 };
@@ -31,6 +32,12 @@ Heading.Tertiary = ({ children, className = "" }) => (
   <h3 className={clsx("font-display text-2xl font-medium", className)}>
     {children}
   </h3>
+);
+
+Heading.Quaternary = ({ children, className = "" }) => (
+  <h4 className={clsx("font-display text-xl font-medium", className)}>
+    {children}
+  </h4>
 );
 
 export default Heading;
