@@ -25,8 +25,8 @@ export const Modal: FC<ModalProps> & {
     <dialog
       className={clsx(
         "group fixed top-0 left-0 z-40 flex h-screen w-full items-center justify-center bg-stone-900/25 px-8",
-        "pointer-events-none opacity-0 backdrop-blur-none",
-        "open:pointer-events-auto open:opacity-100 open:backdrop-blur-sm",
+        "pointer-events-none opacity-0 backdrop-blur-none delay-100",
+        "open:pointer-events-auto open:opacity-100 open:backdrop-blur-sm open:delay-0",
         "transition-all duration-300",
       )}
       ref={modal.ref}
