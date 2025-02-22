@@ -1,14 +1,10 @@
-import {
-  Context,
-  createContext,
-  MouseEventHandler,
-  ReactNode,
-  useContext,
-} from "react";
-import { Link } from "react-router";
+import { createContext, MouseEventHandler, ReactNode } from "react";
+import { Link, useNavigate } from "react-router";
 import { ExternalToast, toast } from "sonner";
+import { useRequiredContext } from "~/common/hooks/useRequiredContext";
 
 interface CardContext {
+  isPublished: boolean;
   link: string;
   deployLink?: string;
   title: string;
@@ -47,15 +43,23 @@ const generateToastWithoutAction = (): Pick<ExternalToast, "description"> => {
 
 export default function Card({
   children,
+  isPublished,
   link,
   deployLink,
   title,
   description,
   imageUrl,
 }: CardProps) {
+  const navigate = useNavigate();
+
   const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) => {
     e.preventDefault();
     e.stopPropagation();
+
+    if (isPublished) {
+      navigate(link);
+      return;
+    }
 
     toast("Documentation en cours d'implémentation", {
       classNames: {
@@ -75,6 +79,7 @@ export default function Card({
   return (
     <CardContext.Provider
       value={{
+        isPublished,
         link,
         deployLink,
         clickHandler,
@@ -96,14 +101,6 @@ export default function Card({
     </CardContext.Provider>
   );
 }
-
-const useRequiredContext = <T,>(context: Context<T>): NonNullable<T> => {
-  const ctx = useContext(context);
-
-  if (!ctx) throw new Error("Missing required context");
-
-  return ctx;
-};
 
 Card.Title = function CardTitle() {
   const { title } = useRequiredContext(CardContext);
