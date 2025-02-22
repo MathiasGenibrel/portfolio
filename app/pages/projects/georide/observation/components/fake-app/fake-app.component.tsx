@@ -1,9 +1,6 @@
 import { FC, useRef } from "react";
 import clsx from "clsx";
 import { WidgetIcon } from "~/common/components/icons/widget.icon";
-import { LockOpenIcon } from "~/common/components/icons/lock-open.icon";
-import { BellIcon } from "~/common/components/icons/bell.icon";
-import { PinIcon } from "~/common/components/icons/pin.icon";
 import { Modal } from "~/common/components/modal/modal.component";
 import type { ModalRef } from "~/common/components/modal/modal.type";
 import { MotorcycleIcon } from "~/common/components/icons/motorcycle.icon";
@@ -11,57 +8,19 @@ import { HomeIcon } from "~/common/components/icons/home.icon";
 import { SettingsIcon } from "~/common/components/icons/settings.icon";
 import { StatIcon } from "~/common/components/icons/stat.icon";
 import { UserGroupIcon } from "~/common/components/icons/user-group.icon";
-import { ShareIcon } from "~/common/components/icons/share.icon";
-import { ThiefIcon } from "~/common/components/icons/thief.icon";
+import { FakeAppButtons } from "~/pages/projects/georide/observation/components/fake-app/components/buttons.component";
 
 interface FakeAppProps {}
 
-interface Button {
-  icon: FC;
-  title: string;
-  description: string;
-  isDanger?: boolean;
-}
-
-const BUTTONS: Button[] = [
-  {
-    title: "Verrouiller / Déverrouiller",
-    description:
-      "Permet de voir en temps réel l'état de verrouillage de sa moto",
-    icon: LockOpenIcon,
-    isDanger: true,
-  },
-  {
-    title: "Localiser",
-    description: "Permet de recentrer la carte sur la position de sa moto",
-    icon: PinIcon,
-  },
-  {
-    title: "Faire sonner la sirène anti-vol",
-    description: "Permet de déclencher la sirène anti-vol de sa moto",
-    icon: BellIcon,
-  },
-  {
-    title: "Partager la position",
-    description:
-      "Permet de créer un lien temporaire de suivis afin de partager sa position en temps réel",
-    icon: ShareIcon,
-  },
-  {
-    title: "Faire sonner la sirène anti-vol",
-    description: "Permet de déclencher la sirène anti-vol de sa moto",
-    icon: ThiefIcon,
-  },
-  {
-    title: "Réglages du véhicule",
-    description:
-      "Permet de configurer les paramètres de sa moto (sirène antivol, badge, etc.)",
-    icon: SettingsIcon,
-  },
-];
-
-export const FakeApp: FC<FakeAppProps> = ({}) => {
+export const FakeApp: FC<FakeAppProps> = () => {
   const modalRef = useRef<ModalRef>(null);
+
+  const handleButtonClick = (title: string, description: string) => {
+    modalRef.current?.open({
+      title: title,
+      description: description,
+    });
+  };
 
   return (
     <>
@@ -122,38 +81,7 @@ export const FakeApp: FC<FakeAppProps> = ({}) => {
               />
             </label>
           </div>
-          <ul
-            className={clsx(
-              "mt-4 flex h-10 flex-wrap justify-between gap-5 px-4 group-has-checked:h-24",
-              "transition-all duration-300",
-            )}
-          >
-            {BUTTONS.map((btn, index) => (
-              <li
-                key={`fake-app-btn-${index}`}
-                className={"flex basis-[20%] justify-center"}
-              >
-                <button
-                  onClick={() =>
-                    modalRef.current?.open({
-                      title: btn.title,
-                      description: btn.description,
-                    })
-                  }
-                  title={btn.title}
-                  className={clsx(
-                    "flex h-10 w-10 cursor-pointer items-center gap-4 rounded-full p-2.5 text-white drop-shadow-sm",
-                    "border-animate border-2 transition-all duration-300",
-                    btn.isDanger
-                      ? "bg-red-500"
-                      : "bg-linear-30 from-orange-500 to-orange-300 to-80%",
-                  )}
-                >
-                  <btn.icon />
-                </button>
-              </li>
-            ))}
-          </ul>
+          <FakeAppButtons onButtonClick={handleButtonClick} />
         </div>
 
         <div
