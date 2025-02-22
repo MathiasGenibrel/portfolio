@@ -5,6 +5,7 @@ import { ImageComparator } from "~/pages/projects/georide/image-comparator/image
 import { Introduction } from "~/pages/projects/georide/introduction/introduction.component";
 import { Marquee } from "~/pages/home/components/separator/Marquee";
 import { Target } from "~/pages/projects/georide/target/target.component";
+import { Observation } from "~/pages/projects/georide/observation/observation.component";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -42,6 +43,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <Marquee items={GEORIDE_PROJECT.keywords} />
       <section className={"w-full bg-stone-900 text-amber-50"}>
         <Target />
+        <Observation />
       </section>
     </>
   );
