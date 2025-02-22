@@ -49,7 +49,7 @@ export const FakeApp: FC<FakeAppProps> = () => {
         </div>
         <div
           className={
-            "mx-8 mb-4 min-w-64 overflow-hidden rounded-lg bg-white p-4 text-stone-900 sm:mx-3"
+            "mx-3 mb-4 min-w-64 overflow-hidden rounded-lg bg-white p-4 text-stone-900"
           }
         >
           <div className={"flex items-center justify-between gap-4"}>
