@@ -72,9 +72,12 @@ export const FakeApp: FC<FakeAppProps> = ({}) => {
       </Modal>
 
       <div
-        className={
-          "group relative flex aspect-[207/448] max-h-[75vh] min-h-[38rem] flex-col justify-end self-center bg-[url(/georide/map.png)] bg-center"
-        }
+        className={clsx(
+          "group relative",
+          "aspect-[207/448] max-h-[75vh] min-h-[38rem]",
+          "flex flex-col justify-end self-center overflow-hidden rounded-3xl",
+          "bg-[url(/georide/map.png)] bg-center",
+        )}
       >
         <div
           className={clsx(
