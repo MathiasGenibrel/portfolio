@@ -11,7 +11,7 @@ export const DataCard: FC<{ title: string; value: string }> = ({
         "flex w-full flex-col items-center justify-center rounded-2xl bg-stone-900 px-5 py-3 text-amber-50 shadow-md"
       }
     >
-      <span className={"text-sm opacity-75"}>{title}</span>
+      <span className={"line-clamp-1 text-sm opacity-75"}>{title}</span>
       <span className={"flex"}>
         {extractNumber(value).map((value, index) =>
           Number.isNaN(Number(value)) ? (

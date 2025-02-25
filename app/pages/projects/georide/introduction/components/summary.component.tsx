@@ -16,7 +16,7 @@ export const Summary: FC<SummaryProps> = () => {
         <Sparkles minSparkleDelay={100} maxSparkleDelay={300} withRandomColor>
           <div
             className={
-              "annotation-appear pointer-events-none flex items-stretch gap-4 delay-[600ms] select-none"
+              "annotation-appear xs:flex-row pointer-events-none flex flex-col items-stretch gap-4 delay-[600ms] select-none"
             }
           >
             <DataCard title={"utilisateurs"} value={"+25000"} />
