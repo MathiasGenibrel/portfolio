@@ -7,6 +7,7 @@ import { Marquee } from "~/pages/home/components/separator/Marquee";
 import { Target } from "~/pages/projects/georide/target/target.component";
 import { Observation } from "~/pages/projects/georide/observation/observation.component";
 import { DesignTrend } from "~/pages/projects/georide/design-trend.component";
+import { Implementation } from "~/pages/projects/georide/implementation/implementation.component";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -32,7 +33,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <>
       <section
         className={
-          "font-display flex w-full max-w-4xl flex-col gap-4 px-4 pt-28 pb-24 md:pt-32 xl:pt-48 xl:pb-32"
+          "font-display flex w-full max-w-4xl flex-col gap-4 px-8 pt-28 pb-24 md:pt-32 xl:pt-48 xl:pb-32"
         }
       >
         <Heading.Primary className={"text-appear"}>
@@ -42,10 +43,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <Introduction />
       </section>
       <Marquee items={GEORIDE_PROJECT.keywords} />
-      <section className={"w-full bg-stone-900 text-amber-50"}>
+      <section className={"w-full bg-stone-900 pb-32 text-amber-50"}>
         <Target />
         <Observation />
         <DesignTrend />
+      </section>
+      <section
+        className={"mt-8 flex w-full max-w-4xl flex-col gap-12 px-8 pb-24"}
+      >
+        <Implementation />
       </section>
     </>
   );
