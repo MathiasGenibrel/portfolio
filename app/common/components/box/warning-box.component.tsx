@@ -11,7 +11,7 @@ export const WarningBox: FC<WarningBoxProps> = ({ children, className }) => {
   return (
     <div
       className={clsx(
-        "flex items-center gap-2 rounded-lg border-2 border-yellow-300 bg-yellow-50 p-4 text-yellow-800",
+        "flex items-center gap-4 rounded-lg border-2 border-yellow-300 bg-yellow-50 p-4 text-yellow-800",
         className,
       )}
     >
