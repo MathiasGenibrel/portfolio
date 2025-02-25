@@ -6,6 +6,7 @@ import { Introduction } from "~/pages/projects/georide/introduction/introduction
 import { Marquee } from "~/pages/home/components/separator/Marquee";
 import { Target } from "~/pages/projects/georide/target/target.component";
 import { Observation } from "~/pages/projects/georide/observation/observation.component";
+import { DesignTrend } from "~/pages/projects/georide/design-trend.component";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -44,6 +45,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <section className={"w-full bg-stone-900 text-amber-50"}>
         <Target />
         <Observation />
+        <DesignTrend />
       </section>
     </>
   );
