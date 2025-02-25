@@ -87,3 +87,7 @@ html {
   border-style: inset;
   background-origin: border-box;
 }
+
+p {
+  @apply font-display
+}
