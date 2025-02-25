@@ -1,16 +1,13 @@
 import { ComponentProps } from "react";
 import Card from "~/common/components/card/Card";
+import { GEORIDE_PROJECT } from "~/data/projects/georide";
 
-export const PROJECTS: Omit<ComponentProps<typeof Card>, "children">[] = [
-  {
-    title: "Refonte de l'app GeoRide",
-    description:
-      "Chez GeoRide, j'ai relevé le défi de réinventer entièrement l'interface de l'application mobile. L'objectif ? Créer une expérience plus intuitive et moderne pour une communauté de plusieurs milliers de motards. Une transformation qui a redéfini la façon dont nos utilisateurs interagissent quotidiennement avec leur passion.",
-    imageUrl: ["/georide-before.webp", "/georide-after.webp"],
-    link: "/georide",
-    deployLink:
-      "https://apps.apple.com/fr/app/georide-lapplication-moto/id1402678901",
-  },
+export interface Project extends Omit<ComponentProps<typeof Card>, "children"> {
+  keywords: string[];
+}
+
+export const PROJECTS: Project[] = [
+  GEORIDE_PROJECT,
   {
     title: "Reproduction de Klack",
     description:
@@ -18,6 +15,15 @@ export const PROJECTS: Omit<ComponentProps<typeof Card>, "children">[] = [
     imageUrl: "/klack.webp",
     link: "/klack",
     deployLink: "https://klack.mathias.run",
+    isPublished: false,
+    keywords: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Motion Framer",
+      "Docker",
+      "Github Actions",
+    ],
   },
   {
     title: "Webapp de distributeur de pizzas",
@@ -26,6 +32,14 @@ export const PROJECTS: Omit<ComponentProps<typeof Card>, "children">[] = [
     imageUrl: "/pizza-nell.webp",
     link: "/pizza-nell",
     deployLink: "https://pizza-nell.mathias.run",
+    isPublished: false,
+    keywords: [
+      "TypeScript",
+      "Tailwind CSS",
+      "AstroJS",
+      "Docker",
+      "Github Actions",
+    ],
   },
   {
     title: "Site pour SebAutoMotoÉcole",
@@ -34,5 +48,14 @@ export const PROJECTS: Omit<ComponentProps<typeof Card>, "children">[] = [
     imageUrl: "/seb-auto.webp",
     link: "/seb-auto-moto-ecole",
     deployLink: "https://sebautomoto.fr",
+    isPublished: false,
+    keywords: [
+      "AstroJS",
+      "TypeScript",
+      "Tailwind CSS",
+      "Strapi",
+      "Docker",
+      "Github Actions",
+    ],
   },
 ];

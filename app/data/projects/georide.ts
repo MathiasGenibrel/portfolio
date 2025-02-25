@@ -6,15 +6,8 @@ export const GEORIDE_PROJECT: Project = {
     "Chez GeoRide, j'ai relevé le défi de réinventer entièrement l'interface de l'application mobile. L'objectif ? Créer une expérience plus intuitive et moderne pour une communauté de plusieurs milliers de motards. Une transformation qui a redéfini la façon dont nos utilisateurs interagissent quotidiennement avec leur passion.",
   imageUrl: ["/georide-before.webp", "/georide-after.webp"],
   link: "/georide",
-  keywords: [
-    "React Native",
-    "TypeScript",
-    "Tailwind CSS",
-    "Redux",
-    "Figma",
-    "UI/UX",
-  ],
+  keywords: ["React Native", "TypeScript", "Figma", "UI/UX", "Redux"],
   deployLink:
     "https://apps.apple.com/fr/app/georide-lapplication-moto/id1402678901",
-  isPublished: true,
+  isPublished: false,
 };
