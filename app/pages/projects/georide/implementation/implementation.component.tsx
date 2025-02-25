@@ -13,14 +13,21 @@ export const Implementation: FC<ImplementationProps> = ({}) => {
         processus de conception.
       </WarningBox>
       <p className={"text-lg"}>
-        Ce menu coulissant, en apparence simple, cachait une réelle complexité
-        technique. Le principal challenge était d'assurer une expérience fluide
-        malgré de nombreuses contraintes techniques. Il fallait gérer
-        simultanément les animations d'ouverture et de fermeture, le défilement
-        interne du menu, le changement dynamique de véhicule, tout en maintenant
-        des performances optimales. La réalisation de ce composant a représenté
-        la partie la plus exigeante du développement, nécessitant un équilibre
-        délicat entre performances techniques et expérience utilisateur.
+        Ce menu coulissant, en apparence simple, cachait une{" "}
+        <strong>réelle complexité technique</strong>. Le principal challenge
+        était d'assurer une expérience fluide malgré de nombreuses contraintes
+        techniques.
+        <br />
+        <br /> Il fallait gérer{" "}
+        <strong>
+          simultanément les animations d'ouverture et de fermeture, le
+          défilement interne du menu, le changement dynamique de véhicule, tout
+          en maintenant des performances optimales.
+        </strong>{" "}
+        <br />
+        La réalisation de ce composant a représenté la partie la plus exigeante
+        du développement, nécessitant un équilibre délicat entre performances
+        techniques et expérience utilisateur.
       </p>
     </article>
   );
