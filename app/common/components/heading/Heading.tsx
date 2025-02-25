@@ -7,7 +7,7 @@ interface HeadingProps {
 }
 
 const baseClassName =
-  "font-heading xs:text-6xl flex w-full flex-col items-end text-4xl md:text-8xl xl:text-9xl text-stone-900";
+  "font-heading xxs:text-6xl flex w-full flex-col items-end text-4xl md:text-8xl xl:text-9xl text-stone-900";
 
 const Heading: React.FC<HeadingProps> & {
   Primary: React.FC<HeadingProps>;

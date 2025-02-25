@@ -7,7 +7,7 @@ export const PrimaryHeading: FC<PrimaryHeadingProps> = () => {
   return (
     <h1
       className={
-        "font-heading xs:text-6xl flex w-full flex-col items-end text-4xl md:text-8xl xl:text-9xl dark:text-stone-900"
+        "font-heading xxs:text-6xl flex w-full flex-col items-end text-4xl md:text-8xl xl:text-9xl dark:text-stone-900"
       }
     >
       <span className={"text-appear"}>Salut !</span>

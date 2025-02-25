@@ -23,7 +23,8 @@ html {
 }
 
 @theme {
-  --breakpoint-xs: 25rem;
+  --breakpoint-xxs: 25rem;
+  --breakpoint-xs: 30rem;
   --font-display: "Satoshi", "sans-serif";
   --font-heading: "Magilio", "sans-serif";
   --font-magic: "Fira", "sans-serif";
