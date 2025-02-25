@@ -8,6 +8,7 @@ import { Target } from "~/pages/projects/georide/target/target.component";
 import { Observation } from "~/pages/projects/georide/observation/observation.component";
 import { DesignTrend } from "~/pages/projects/georide/design-trend.component";
 import { Implementation } from "~/pages/projects/georide/implementation/implementation.component";
+import { Ending } from "~/pages/projects/georide/ending/ending.component";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -52,6 +53,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         className={"mt-8 flex w-full max-w-4xl flex-col gap-12 px-8 pb-24"}
       >
         <Implementation />
+        <Ending />
       </section>
     </>
   );
