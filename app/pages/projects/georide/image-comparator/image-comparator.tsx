@@ -16,8 +16,10 @@ export const ImageComparator: FC<ImageComparatorProps> = ({}) => {
       className={
         "annotation-appear relative w-fit self-center overflow-hidden delay-200 select-none"
       }
+      onTouchMove={handler.touchMove}
       onMouseMove={handler.move}
       onClick={handler.click}
+      onTouchEnd={handler.touchEnd}
     >
       <img
         alt=""
