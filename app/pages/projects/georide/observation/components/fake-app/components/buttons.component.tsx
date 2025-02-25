@@ -6,13 +6,14 @@ import { BellIcon } from "~/common/components/icons/bell.icon";
 import { ShareIcon } from "~/common/components/icons/share.icon";
 import { ThiefIcon } from "~/common/components/icons/thief.icon";
 import { SettingsIcon } from "~/common/components/icons/settings.icon";
+import { IconProps } from "~/common/components/icons/icon.types";
 
 interface ButtonsProps {
   onButtonClick: (title: string, description: string) => void;
 }
 
 interface Button {
-  icon: FC;
+  icon: FC<IconProps>;
   title: string;
   description: string;
   isDanger?: boolean;
@@ -81,7 +82,7 @@ export const FakeAppButtons: FC<ButtonsProps> = ({ onButtonClick }) => {
                 : "bg-linear-30 from-orange-500 to-orange-300 to-80%",
             )}
           >
-            <btn.icon />
+            <btn.icon className={"h-4"} />
           </button>
           <span
             className={clsx(
