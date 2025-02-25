@@ -20,7 +20,11 @@ export const Summary: FC<SummaryProps> = () => {
             }
           >
             <DataCard title={"utilisateurs"} value={"+25000"} />
-            <DataCard title={"véhicules retrouvé"} value={"90%"} />
+            <DataCard
+              title={"véhicules retrouvé"}
+              value={"90%"}
+              tag={"En moins de 24h"}
+            />
           </div>
         </Sparkles>
         <p className={"annotation-appear text-lg text-stone-900 delay-[800ms]"}>
