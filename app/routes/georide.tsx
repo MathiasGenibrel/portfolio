@@ -55,6 +55,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <Implementation />
         <Ending />
       </section>
+      <Marquee items={[...GEORIDE_PROJECT.keywords, "Ride safe ✌️"]} />
     </>
   );
 }
