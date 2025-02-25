@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Heading from "~/common/components/heading/Heading";
+import { ImagePreview } from "~/common/components/image-preview.component";
 
 interface PreviewProps {}
 
@@ -16,20 +17,7 @@ export const Preview: FC<PreviewProps> = ({}) => {
   return (
     <>
       <Heading.Tertiary className={"pt-4"}>Aperçu de l'app</Heading.Tertiary>
-      <div
-        className={
-          "max-h-[calc(100lvh - 20lvh)] mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden"
-        }
-      >
-        {IMAGES_URLS.map((href, index) => (
-          <img
-            key={index}
-            className={"max-h-carousel aspect-[230/491] snap-start rounded-3xl"}
-            src={href}
-            alt=""
-          />
-        ))}
-      </div>
+      <ImagePreview imagesUrls={IMAGES_URLS} />
     </>
   );
 };
