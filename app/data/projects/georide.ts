@@ -9,5 +9,5 @@ export const GEORIDE_PROJECT: Project = {
   keywords: ["React Native", "TypeScript", "Figma", "UI/UX", "Redux"],
   deployLink:
     "https://apps.apple.com/fr/app/georide-lapplication-moto/id1402678901",
-  isPublished: false,
+  isPublished: true,
 };
