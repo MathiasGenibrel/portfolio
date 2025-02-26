@@ -69,10 +69,10 @@ export const Header = () => {
                 isOpen ? "opacity-100 delay-150" : "opacity-0 md:opacity-100",
               )}
             >
-              <NavListItem toggleMenu={toggle} href={"#about"}>
+              <NavListItem toggleMenu={toggle} href={"/#about"}>
                 À propos
               </NavListItem>
-              <NavListItem toggleMenu={toggle} href={"#works"}>
+              <NavListItem toggleMenu={toggle} href={"/#works"}>
                 Projets
               </NavListItem>
             </ul>
